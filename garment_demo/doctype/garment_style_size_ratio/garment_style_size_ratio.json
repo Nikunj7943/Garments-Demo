@@ -1,0 +1,12 @@
+{
+  "doctype": "DocType",
+  "name": "Garment Style Size Ratio",
+  "module": "Garment Demo",
+  "istable": 1,
+  "editable_grid": 1,
+  "fields": [
+    {"fieldname": "size", "fieldtype": "Data", "label": "Size", "in_list_view": 1, "reqd": 1},
+    {"fieldname": "ratio", "fieldtype": "Int", "label": "Ratio in Set", "in_list_view": 1, "reqd": 1},
+    {"fieldname": "measurement_chart", "fieldtype": "Small Text", "label": "Key Measurements"}
+  ]
+}

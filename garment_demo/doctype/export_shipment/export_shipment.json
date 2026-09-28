@@ -1,0 +1,37 @@
+{
+  "doctype": "DocType",
+  "name": "Export Shipment",
+  "module": "Garment Demo",
+  "naming_rule": "By \"Naming Series\" field",
+  "autoname": "naming_series:",
+  "is_submittable": 1,
+  "track_changes": 1,
+  "fields": [
+    {"fieldname": "naming_series", "fieldtype": "Select", "options": "EXP-.YYYY.-", "default": "EXP-.YYYY.-", "label": "Series"},
+    {"fieldname": "packing_list", "fieldtype": "Link", "options": "Packing List", "label": "Packing List", "reqd": 1},
+    {"fieldname": "buyer", "fieldtype": "Link", "options": "Customer", "label": "Buyer", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "invoice_no", "fieldtype": "Data", "label": "Commercial Invoice No"},
+    {"fieldname": "invoice_value", "fieldtype": "Currency", "label": "Invoice Value (FOB)"},
+    {"fieldname": "currency", "fieldtype": "Link", "options": "Currency", "label": "Currency", "default": "USD"},
+    {"fieldname": "section_break_1", "fieldtype": "Section Break", "label": "Export Compliance"},
+    {"fieldname": "hs_code", "fieldtype": "Data", "label": "HS Code",
+      "description": "e.g. 6109.10 for cotton knit t-shirts, 6203.42 for cotton trousers"},
+    {"fieldname": "incoterm", "fieldtype": "Select", "label": "Incoterm",
+      "options": "FOB\nCIF\nCFR\nEXW\nDDP\nFCA"},
+    {"fieldname": "country_of_destination", "fieldtype": "Link", "options": "Country", "label": "Destination Country"},
+    {"fieldname": "column_break_2", "fieldtype": "Column Break"},
+    {"fieldname": "shipping_bill_no", "fieldtype": "Data", "label": "Shipping Bill No (customs)"},
+    {"fieldname": "container_no", "fieldtype": "Data", "label": "Container No"},
+    {"fieldname": "vessel_flight_no", "fieldtype": "Data", "label": "Vessel/Flight No"},
+    {"fieldname": "etd", "fieldtype": "Date", "label": "ETD"},
+    {"fieldname": "eta", "fieldtype": "Date", "label": "ETA"},
+    {"fieldname": "section_break_2", "fieldtype": "Section Break", "label": "Status"},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "default": "Booked", "in_list_view": 1,
+      "options": "Booked\nCustoms Cleared\nShipped\nDelivered"}
+  ],
+  "permissions": [
+    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "submit": 1, "cancel": 1},
+    {"role": "Sales Manager", "read": 1, "write": 1, "create": 1, "submit": 1}
+  ]
+}

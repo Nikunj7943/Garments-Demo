@@ -1,0 +1,27 @@
+{
+  "doctype": "DocType",
+  "name": "Packing List",
+  "module": "Garment Demo",
+  "naming_rule": "By \"Naming Series\" field",
+  "autoname": "naming_series:",
+  "track_changes": 1,
+  "fields": [
+    {"fieldname": "naming_series", "fieldtype": "Select", "options": "PKL-.YYYY.-", "default": "PKL-.YYYY.-", "label": "Series"},
+    {"fieldname": "qc_inspection", "fieldtype": "Link", "options": "QC Inspection", "label": "Source QC Inspection", "read_only": 1},
+    {"fieldname": "style", "fieldtype": "Link", "options": "Garment Style", "label": "Style", "read_only": 1, "in_list_view": 1},
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {"fieldname": "passed_qty", "fieldtype": "Int", "label": "Passed Qty to Pack", "read_only": 1, "in_list_view": 1},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "default": "Ready to Pack", "in_list_view": 1,
+      "options": "Ready to Pack\nCartons Assigned\nPacked\nHanded Over for Shipment"},
+    {"fieldname": "section_break_1", "fieldtype": "Section Break", "label": "Carton Breakdown"},
+    {"fieldname": "carton_lines", "fieldtype": "Table", "options": "Packing Carton Line", "label": "Cartons"},
+    {"fieldname": "section_break_2", "fieldtype": "Section Break", "label": "Totals"},
+    {"fieldname": "total_cartons", "fieldtype": "Int", "label": "Total Cartons", "read_only": 1},
+    {"fieldname": "column_break_2", "fieldtype": "Column Break"},
+    {"fieldname": "total_packed_qty", "fieldtype": "Int", "label": "Total Packed Qty", "read_only": 1}
+  ],
+  "permissions": [
+    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Manufacturing User", "read": 1, "write": 1, "create": 1}
+  ]
+}

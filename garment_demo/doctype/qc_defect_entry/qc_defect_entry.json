@@ -1,0 +1,15 @@
+{
+  "doctype": "DocType",
+  "name": "QC Defect Entry",
+  "module": "Garment Demo",
+  "istable": 1,
+  "editable_grid": 1,
+  "fields": [
+    {"fieldname": "defect_type", "fieldtype": "Select", "label": "Defect Type", "in_list_view": 1,
+      "options": "Stitching\nMeasurement\nFabric Fault\nColor Shade\nStain/Dirt\nMissing Component\nPacking/Labeling\nOther"},
+    {"fieldname": "defect_class", "fieldtype": "Select", "label": "Class (AQL)", "in_list_view": 1,
+      "options": "Critical\nMajor\nMinor"},
+    {"fieldname": "qty_affected", "fieldtype": "Int", "label": "Qty Affected", "in_list_view": 1, "reqd": 1},
+    {"fieldname": "remarks", "fieldtype": "Data", "label": "Remarks"}
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "doctype": "Workflow",
+  "workflow_name": "QC Inspection Workflow",
+  "document_type": "QC Inspection",
+  "is_active": 1,
+  "workflow_state_field": "workflow_state",
+  "states": [
+    {"state": "Under Inspection", "doc_status": "0", "allow_edit": "Quality Inspector"},
+    {"state": "Passed", "doc_status": "1", "allow_edit": "Quality Manager"},
+    {"state": "Failed - Rework Required", "doc_status": "0", "allow_edit": "Quality Manager"},
+    {"state": "Failed - Reject", "doc_status": "1", "allow_edit": "Quality Manager"}
+  ],
+  "transitions": [
+    {
+      "state": "Under Inspection",
+      "action": "Submit for Review",
+      "next_state": "Passed",
+      "allowed": "Quality Manager",
+      "condition": "doc.result == 'Passed'"
+    },
+    {
+      "state": "Under Inspection",
+      "action": "Flag Rework",
+      "next_state": "Failed - Rework Required",
+      "allowed": "Quality Manager",
+      "condition": "doc.result == 'Failed - Rework Required'"
+    },
+    {
+      "state": "Under Inspection",
+      "action": "Reject Lot",
+      "next_state": "Failed - Reject",
+      "allowed": "Quality Manager",
+      "condition": "doc.result == 'Failed - Reject'"
+    },
+    {
+      "state": "Failed - Rework Required",
+      "action": "Re-submit After Rework",
+      "next_state": "Under Inspection",
+      "allowed": "Quality Inspector"
+    }
+  ]
+}

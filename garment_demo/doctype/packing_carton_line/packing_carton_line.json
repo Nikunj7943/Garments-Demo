@@ -1,0 +1,14 @@
+{
+  "doctype": "DocType",
+  "name": "Packing Carton Line",
+  "module": "Garment Demo",
+  "istable": 1,
+  "editable_grid": 1,
+  "fields": [
+    {"fieldname": "carton_no", "fieldtype": "Data", "label": "Carton No", "in_list_view": 1, "reqd": 1},
+    {"fieldname": "size_breakdown", "fieldtype": "Data", "label": "Size Breakdown (e.g. S-10,M-10,L-5)", "in_list_view": 1},
+    {"fieldname": "qty_in_carton", "fieldtype": "Int", "label": "Qty in Carton", "in_list_view": 1, "reqd": 1},
+    {"fieldname": "carton_weight_kg", "fieldtype": "Float", "label": "Gross Weight (kg)"},
+    {"fieldname": "carton_dimensions", "fieldtype": "Data", "label": "Dimensions L x W x H (cm)"}
+  ]
+}

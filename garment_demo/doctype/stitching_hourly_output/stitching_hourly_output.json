@@ -1,0 +1,13 @@
+{
+  "doctype": "DocType",
+  "name": "Stitching Hourly Output",
+  "module": "Garment Demo",
+  "istable": 1,
+  "editable_grid": 1,
+  "fields": [
+    {"fieldname": "hour_slot", "fieldtype": "Data", "label": "Hour (e.g. 9-10am)", "in_list_view": 1, "reqd": 1},
+    {"fieldname": "output_qty", "fieldtype": "Int", "label": "Output Qty", "in_list_view": 1, "reqd": 1},
+    {"fieldname": "rejects_qty", "fieldtype": "Int", "label": "Rejects (in-line)", "in_list_view": 1},
+    {"fieldname": "remarks", "fieldtype": "Data", "label": "Remarks (e.g. machine down, thread break)"}
+  ]
+}
